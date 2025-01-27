@@ -15,6 +15,8 @@ const LeadForm = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(message);
+    
     setIsSubmitted(true);
     setShowRocket(true); // Show the rocket when the form is submitted
     setError(null); // Reset any previous error
