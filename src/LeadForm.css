@@ -1,0 +1,229 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', sans-serif;
+  background: #000;
+  color: #FFF;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background */
+.lead-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTBzN2J0cmo1NXJrMWg0MWhtc3RpY3pkc2xzcnhwY2E0c3UwdjJlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4KhQo2MESJkc6QbS/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Background Text */
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: fadeInOut 5s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Lead Form */
+.lead-form {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: scale(1.1);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #FFEB3B;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: textPop 1.5s ease-in-out forwards;
+}
+
+@keyframes textPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #FF5722;
+}
+
+/* Form Fields */
+.form-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #FF5722;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  border: 2px solid #FF5722;
+  border-radius: 20px;
+  outline: none;
+  background: #222;
+  color: #FFF;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #FF5722;
+}
+
+input:focus, textarea:focus {
+  border-color: #FFEB3B;
+  box-shadow: 0 0 10px #FFEB3B;
+  transform: scale(1.05);
+}
+
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(45deg, #FF5722, #FFEB3B);
+  color: white;
+  font-size: 1.4em;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: #FFEB3B;
+  transition: all 0.3s ease;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.submit-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.submit-button:hover {
+  color: #222;
+  transform: scale(1.1);
+}
+
+.submit-button:active {
+  transform: scale(0.95);
+}
+
+/* Rocket Animation */
+.rocket-animation {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rocket-blastoff 2s ease-in-out infinite;
+}
+
+@keyframes rocket-blastoff {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-100px) rotate(10deg); }
+  100% { transform: translateY(-200px) rotate(-10deg); }
+}
+/* Dramatic Error Modal Centered */
+.dramatic-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 87, 34, 0.9);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  animation: slideUp 1s ease-out, fadeOut 1s ease-out 2s forwards; /* Add fade out after 2 seconds */
+}
+
+/* Fade Out Animation for Closing */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.close-modal-button {
+  background: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  background-color: white;
+  color: #FF5722;
+}
+
+/* Thank You Modal */
+.thank-you-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+  z-index: 10;
+  animation: fadeIn 0.5s ease-in-out forwards, fadeOut 1s ease-out 2s forwards;
+}
